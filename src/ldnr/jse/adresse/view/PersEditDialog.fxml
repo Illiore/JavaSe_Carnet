@@ -40,7 +40,6 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
                                     <Label text="Nom" />
@@ -50,7 +49,6 @@
                                     <Label text="Ville" GridPane.rowIndex="4" />
                                     <Label text="Téléphone Fixe" GridPane.rowIndex="5" />
                                     <Label text="Email" GridPane.rowIndex="7" />
-                                    <Label text="Commercial Référent" GridPane.rowIndex="8" />
                                     <TextField GridPane.columnIndex="1" />
                                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -58,7 +56,6 @@
                                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
                                     <Label text="Téléphone Portable" GridPane.rowIndex="6" />
                                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                  </children>
