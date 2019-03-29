@@ -3,29 +3,23 @@
 }
 
 .pane {
-    -fx-background-color: #1592E6;
+    -fx-background-color: #99CBD0;
     -fx-text-fill: white;
 }
 
-.label {
-    -fx-font-size: 12pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-}
 
-/*
 .label {
     -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
-    -fx-opacity: 0.6;
+    -fx-font-weight: lighter;
 }
 
 .label-bright {
     -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
-    -fx-opacity: 1;
+    -fx-font-weight: bold;
 }
 
 .label-header {
@@ -33,8 +27,52 @@
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-opacity: 1;
+    -fx-font-weight : bolder;
 }
 
+.button {
+    -fx-padding: 5 15 5 15;   
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: #1592E6;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 12pt;
+    -fx-text-fill: white;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-font-weight: bolder;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+.table-view {
+    -fx-base: #1592E6;
+    -fx-control-inner-background: #1592E6;
+    -fx-background-color: #99CBD0;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+.check-box .box {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: -fx-colour-white;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-blue;
+}
+.check-box {
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+}
+
+/*
 .table-view {
     -fx-base: #1d1d1d;
     -fx-control-inner-background: #1d1d1d;

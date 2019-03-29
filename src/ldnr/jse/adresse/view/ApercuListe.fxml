@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.CheckBox?>
@@ -17,26 +18,29 @@
    <children>
       <SplitPane dividerPositions="0.09742120343839542" layoutX="136.0" layoutY="111.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="pane" stylesheets="@theme.css">
                <children>
-                  <Label layoutX="194.0" layoutY="24.0" text="Carnet d'adresse" />
+                  <Label layoutX="134.0" layoutY="17.0" styleClass="label-header" stylesheets="@theme.css" text="Carnet d'adresse" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <SplitPane layoutX="22.0" layoutY="390.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="495.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="495.0" styleClass="background" stylesheets="@theme.css">
                            <children>
-                              <ButtonBar layoutX="85.0" layoutY="570.0" prefHeight="40.0" prefWidth="328.0">
+                              <ButtonBar layoutX="85.0" layoutY="570.0" prefHeight="40.0" prefWidth="328.0" styleClass="pane" stylesheets="@theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="549.0">
                                 <buttons>
-                                    <Button mnemonicParsing="false" text="Modifier" />
+                                    <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" text="Modifier" />
                                     <Button mnemonicParsing="false" text="Annuler" />
                                 </buttons>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
                               </ButtonBar>
-                              <CheckBox layoutX="14.0" layoutY="24.0" mnemonicParsing="false" text="Particulier" />
-                              <CheckBox layoutX="204.0" layoutY="24.0" mnemonicParsing="false" text="Entreprise" />
-                              <CheckBox layoutX="379.0" layoutY="24.0" mnemonicParsing="false" text="Commercial" />
+                              <CheckBox layoutX="14.0" layoutY="24.0" mnemonicParsing="false" stylesheets="@theme.css" text="Particulier" />
+                              <CheckBox layoutX="204.0" layoutY="24.0" mnemonicParsing="false" stylesheets="@theme.css" text="Entreprise" />
+                              <CheckBox layoutX="356.0" layoutY="24.0" mnemonicParsing="false" stylesheets="@theme.css" text="Commercial" />
                               <TableView layoutX="148.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="Nom" />
