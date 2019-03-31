@@ -15,7 +15,7 @@ import javafx.beans.property.StringProperty;
 public class PersonnePhysique extends Personne {
     protected final StringProperty prenom;
     /**
-     * Default constructor.
+     * Constructor with some initial data.
      * @param nom
      * @param prenom
      */

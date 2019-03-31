@@ -15,7 +15,7 @@ import javafx.beans.property.StringProperty;
 public class Commercial extends PersonnePhysique{
     protected final StringProperty code;
     /**
-     * Default constructor.
+     * Constructor with some initial data.
      * @param nom
      * @param prenom
      */

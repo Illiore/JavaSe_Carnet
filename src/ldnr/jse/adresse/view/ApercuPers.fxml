@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adresses.view.ApercuPersController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldnr.jse.adresse.view.ApercuPersController">
     <stylesheets>
         <URL value="@apercupers.css" />
     </stylesheets>
@@ -43,7 +43,6 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
                                     <Label stylesheets="@theme.css" text="Nom" />
@@ -60,8 +59,6 @@
                                     <Label styleClass="label-bright" stylesheets="@theme.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                     <Label stylesheets="@theme.css" text="Email" GridPane.rowIndex="7" />
                                     <Label styleClass="label-bright" stylesheets="@theme.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <Label stylesheets="@theme.css" text="Commercial Référent" GridPane.rowIndex="8" />
-                                    <Label styleClass="label-bright" stylesheets="@theme.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                                     <Label stylesheets="@theme.css" text="Téléphone portable" GridPane.rowIndex="6" />
                                     <Label styleClass="label-bright" stylesheets="@theme.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                  </children>
