@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="500.0" styleClass="pane" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adresses.view.ApercuPersController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="500.0" styleClass="pane" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ldnr.jse.adresse.view.CommercialEditDialogController">
    <children>
       <SplitPane dividerPositions="0.09742120343839542" layoutX="136.0" layoutY="111.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -51,22 +51,22 @@
                                     <Label text="Téléphone Fixe" GridPane.rowIndex="5" />
                                     <Label text="Code" GridPane.rowIndex="8" />
                                     <Label text="Email" GridPane.rowIndex="7" />
-                                    <TextField GridPane.columnIndex="1" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <TextField fx:id="champNom" GridPane.columnIndex="1" />
+                                    <TextField fx:id="champPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="champAdresse" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="champCodePostal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="champVille" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="champTelephone" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="champEmail" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <TextField fx:id="champCode" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                                     <Label text="Téléphone Portable" GridPane.rowIndex="6" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <TextField fx:id="champTelephoneBis" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                  </children>
                               </GridPane>
                               <ButtonBar layoutX="85.0" layoutY="570.0" prefHeight="40.0" prefWidth="328.0" styleClass="pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="549.0">
                                 <buttons>
-                                    <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" text="Enregistrer" />
-                                    <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" text="Annuler" />
+                                    <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="32.0" prefWidth="220.0" text="Enregistrer" />
+                                    <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="32.0" prefWidth="220.0" text="Annuler" />
                                 </buttons>
                                  <padding>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

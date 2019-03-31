@@ -8,25 +8,27 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import ldnr.jse.adresse.model.PersonnePhysique;
+import ldnr.jse.adresse.model.PersonneMorale;
 
 /**
  * Fenetre d'édition d'une personne physique
  *
  * @author Bastien
  */
-public class PersEditDialogController implements Initializable {
+public class PersMoraleEditDialogController implements Initializable{
 
     @FXML
     private TextField champNom;
     @FXML
-    private TextField champPrenom;
+    private TextField champGerant;
     @FXML
     private TextField champAdresse;
     @FXML
     private TextField champCodePostal;
     @FXML
     private TextField champVille;
+    @FXML
+    private TextField champFax;
     @FXML
     private TextField champTelephone;
     @FXML
@@ -36,7 +38,7 @@ public class PersEditDialogController implements Initializable {
 
 
     private Stage dialogStage;
-    private PersonnePhysique person;
+    private PersonneMorale person;
     private boolean okClicked = false;
 
     /**
@@ -61,14 +63,15 @@ public class PersEditDialogController implements Initializable {
      *
      * @param person
      */
-    public void setPerson(PersonnePhysique person) {
+    public void setPerson(PersonneMorale person) {
         this.person = person;
 
         champNom.setText(person.getNom());
-        champPrenom.setText(person.getPrenom());
+        champGerant.setText(person.getGerant());
         champAdresse.setText(person.getAdresse());
         champCodePostal.setText(person.getCP());
         champVille.setText(person.getVille());
+        champFax.setText(person.getFax());
         champTelephone.setText(person.getTelephone());
         champTelephoneBis.setText(person.getTelephoneBis());
         champEmail.setText(person.getEmail());
@@ -91,10 +94,11 @@ public class PersEditDialogController implements Initializable {
     private void handleOk() {
         if (isInputValid()) {
             person.setNom(champNom.getText());
-            person.setPrenom(champPrenom.getText());
+            person.setGerant(champGerant.getText());
             person.setAdresse(champAdresse.getText());
             person.setCP(champCodePostal.getText());
             person.setVille(champVille.getText());
+            person.setFax(champFax.getText());
             person.setTelephone(champTelephone.getText());
             person.setTelephoneBis(champTelephoneBis.getText());
             person.setEmail(champEmail.getText());
@@ -122,7 +126,7 @@ public class PersEditDialogController implements Initializable {
         if (champNom.getText() == null || champNom.getText().length() == 0) {
             errorMessage += "Nom invalide\n";
         }
-        if (champPrenom.getText() == null || champPrenom.getText().length() == 0) {
+        if (champGerant.getText() == null || champGerant.getText().length() == 0) {
             errorMessage += "Prénom invalide\n";
         }
         if (champAdresse.getText() == null || champAdresse.getText().length() == 0) {
@@ -133,6 +137,9 @@ public class PersEditDialogController implements Initializable {
         } 
         if (champVille.getText() == null || champVille.getText().length() == 0) {
             errorMessage += "Ville invalide\n";
+        }
+         if (champFax.getText() == null || champFax.getText().length() == 0) {
+            errorMessage += "Telephone invalide\n";
         }
         if (champTelephone.getText() == null || champTelephone.getText().length() == 0) {
             errorMessage += "Telephone invalide\n";

@@ -14,13 +14,15 @@ import javafx.beans.property.StringProperty;
  */
 public class PersonneMorale extends Personne {
     protected final StringProperty fax;
+    protected final StringProperty gerant;
     /**
      * Constructor with  some initial data.
      * @param nom
      */
     public PersonneMorale(String nom) {
         super(nom);
-        this.fax = new SimpleStringProperty("05050505");
+        this.fax = new SimpleStringProperty("0505050505");
+        this.gerant = new SimpleStringProperty("gérant");
     }
     
     public String getFax() {
@@ -33,6 +35,17 @@ public class PersonneMorale extends Personne {
     
     public StringProperty faxProperty() {
         return fax;
+    }
+    public String getGerant() {
+        return gerant.get();
+    }
+
+    public void setGerant(String gerant) {
+        this.gerant.set(gerant);
+    }
+    
+    public StringProperty gerantProperty() {
+        return gerant;
     }
     
 }
