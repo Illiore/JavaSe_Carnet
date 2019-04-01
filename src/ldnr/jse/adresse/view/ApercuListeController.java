@@ -4,20 +4,26 @@
  * and open the template in the editor.
  */
 package ldnr.jse.adresse.view;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import ldnr.jse.adresse.MainApp;
+import ldnr.jse.adresse.model.Personne;
+import ldnr.jse.adresse.model.PersonneMorale;
 import ldnr.jse.adresse.model.PersonnePhysique;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class ApercuPersController implements Initializable {
-    
+public class ApercuListeController {
+    @FXML
+    private TableView<PersonnePhysique> personTable;
+    @FXML
+    private TableColumn<PersonnePhysique, String> colNom;
+    @FXML
+    private TableColumn<PersonnePhysique, String> colVille;
+
     @FXML
     private Label champNom;
     @FXML
@@ -25,7 +31,7 @@ public class ApercuPersController implements Initializable {
     @FXML
     private Label champAdresse;
     @FXML
-    private Label champCP;
+    private Label champCodePostal;
     @FXML
     private Label champVille;
     @FXML
@@ -34,7 +40,6 @@ public class ApercuPersController implements Initializable {
     private Label champTelephoneBis;
     @FXML
     private Label champEmail;
-    
 
     // Reference to the main application.
     private MainApp mainApp;
@@ -43,7 +48,7 @@ public class ApercuPersController implements Initializable {
      * The constructor.
      * The constructor is called before the initialize() method.
      */
-    public ApercuPersController() {
+    public ApercuListeController() {
     }
 
     /**
@@ -52,6 +57,12 @@ public class ApercuPersController implements Initializable {
      */
     @FXML
     private void initialize() {
+        // Initialize the person table with the two columns.
+        colNom.setCellValueFactory(
+                cellData -> cellData.getValue().nomProperty());
+        colVille.setCellValueFactory(
+                cellData -> cellData.getValue().villeProperty());
+
         // Clear person details.
         showPersonDetails(null);
 
@@ -69,7 +80,7 @@ public class ApercuPersController implements Initializable {
         this.mainApp = mainApp;
 
         // Add observable list data to the table
-        personTable.setItems(mainApp.getPersonData());
+        personTable.setItems(mainApp.getPersonnePhysiqueData());
     }
     
     /**
@@ -78,15 +89,19 @@ public class ApercuPersController implements Initializable {
     *
     * @param person the person or null
     */
-   private void showPersonDetails(Person person) {
+    
+   private void showPersonDetails(PersonnePhysique person) {
        if (person != null) {
            // Fill the labels with info from the person object.
-           firstNameLabel.setText(person.getFirstName());
-           lastNameLabel.setText(person.getLastName());
-           streetLabel.setText(person.getStreet());
-           postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
-           cityLabel.setText(person.getCity());
-           birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+           champNom.setText(person.getNom());
+           champPrenom.setText(person.getPrenom());
+           champAdresse.setText(person.getAdresse());
+           champCodePostal.setText(person.getCP());
+           champVille.setText(person.getVille());           
+           champTelephone.setText(person.getTelephone());           
+           champTelephoneBis.setText(person.getTelephoneBis());                    
+           champEmail.setText(person.getEmail());
+           
            
            // birthdayLabel.setText(...);
        } else {
@@ -126,10 +141,10 @@ public class ApercuPersController implements Initializable {
     */
    @FXML
    private void handleNewPerson() {
-       Person tempPerson = new Person();
-       boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
+       Personne tempPerson = new PersonnePhysique("","");
+       boolean okClicked = mainApp.showPersonOverview(tempPerson);
        if (okClicked) {
-           mainApp.getPersonData().add(tempPerson);
+           mainApp.getPersonnePhysiqueData().add(tempPerson);
        }
    }
 
@@ -139,9 +154,9 @@ public class ApercuPersController implements Initializable {
      */
     @FXML
     private void handleEditPerson() {
-        Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+        PersonnePhysique selectedPerson = personTable.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
-            boolean okClicked = mainApp.showPersonEditDialog(selectedPerson);
+            boolean okClicked = mainApp.showPersEditDialog(selectedPerson);
             if (okClicked) {
                 showPersonDetails(selectedPerson);
             }
@@ -156,10 +171,5 @@ public class ApercuPersController implements Initializable {
 
             alert.showAndWait();
         }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

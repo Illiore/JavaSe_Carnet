@@ -31,6 +31,7 @@ public abstract class Personne {
     /**
      * Default constructor.
      */
+    
     public Personne() {
         this(null);
     }
